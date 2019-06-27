@@ -16,9 +16,17 @@ namespace Modelo.Infra.Data.Mapping
 
             builder.HasKey(c => c.Id);
 
-            builder.Property(c => c.Cpf)
-                .IsRequired()
-                .HasColumnName("Cpf");
+            builder.OwnsOne(c => c.CPF, cpf =>
+            {
+                cpf.Property(c => c.Numero)
+                    .IsRequired()
+                    .HasColumnName("CPF")
+                    .HasColumnType("varchar(11)");
+
+                cpf.Property(c => c.DataEmissao)
+                    .HasColumnName("CPFDataEmissao");
+            });
+     
 
             builder.Property(c => c.idade)
                 .IsRequired()
@@ -26,8 +34,8 @@ namespace Modelo.Infra.Data.Mapping
 
             builder.Property(c => c.Nome)
                 .IsRequired()
-      
-                .HasColumnName("Nome");
+                .HasColumnName("Nome")
+             .HasColumnType("varchar(30)");
         }
     }
 }

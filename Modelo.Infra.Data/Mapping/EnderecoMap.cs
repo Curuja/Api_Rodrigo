@@ -18,21 +18,23 @@ namespace Modelo.Infra.Data.Mapping
 
             builder.Property(c => c.logradouro)
                 .IsRequired()
-                .HasColumnName("logradouro");
+                .HasColumnName("logradouro")
+                .HasColumnType("varchar(50)");
 
             builder.Property(c => c.Bairro)
                 .IsRequired()
-                .HasColumnName("Bairro");
+                .HasColumnName("Bairro")
+             .HasColumnType("varchar(40)");
 
             builder.Property(c => c.Cidade)
                 .IsRequired()
-
-                .HasColumnName("Cidade");
+                .HasColumnName("Cidade")
+             .HasColumnType("varchar(40)");
 
             builder.Property(c => c.Estado)
               .IsRequired()
-
-              .HasColumnName("Estado");
+              .HasColumnName("Estado")
+              .HasColumnType("varchar(40)");
         }
     }
 }

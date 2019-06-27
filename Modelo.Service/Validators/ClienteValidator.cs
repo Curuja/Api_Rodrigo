@@ -17,7 +17,7 @@ namespace Modelo.Service.Validators
                     throw new ArgumentNullException("Objeto inexistente.");
                 });
 
-            RuleFor(c => c.Cpf)
+            RuleFor(c => c.CPF.Numero)
                 .NotEmpty().WithMessage("CPF é obrigatório.")
                 .NotNull().WithMessage("CPF é obrigatório.")
                 .MaximumLength(11).WithMessage("CPF deve conter 11 caracteres sem pontos ou traços.");
