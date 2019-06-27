@@ -11,6 +11,8 @@ namespace Modelo.Infra.Data.Context
     public class RodrigoContext : DbContext
     {
         public DbSet<User> User { get; set; }
+        public DbSet<Cliente> Cliente { get; set; }
+        public DbSet<Endereco> Endereco { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -23,6 +25,10 @@ namespace Modelo.Infra.Data.Context
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>(new UserMap().Configure);
+            modelBuilder.Entity<Cliente>(new ClienteMap().Configure);
+            modelBuilder.Entity<Endereco>(new EnderecoMap().Configure);
         }
     }
+
+ 
 }

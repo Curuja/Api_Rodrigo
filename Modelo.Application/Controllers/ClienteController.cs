@@ -11,25 +11,26 @@ using Modelo.Service.Validators;
 namespace Modelo.Application.Controllers
 {
     [Produces("application/json")]
-    [Route("api/[controller]")]
-    public class UserController : Controller
+    [Route("api/Cliente")]
+ 
+    public class ClienteController : Controller
     {
-        private BaseService<User> service = new BaseService<User>();
+        private BaseService<Cliente> service = new BaseService<Cliente>();
         /// <summary>
         /// Recebe dados de usuario
         /// </summary>
-        /// <param name="item">Temperatura em Fahrenheit</param>
+        /// <param name="item">Dados do cliente</param>
         /// <returns>Objeto contendo dados do usuario.</returns>
         [HttpPost("Insere/{item}")]
-        public IActionResult Post([FromBody] User item)
+        public IActionResult Post([FromBody] Cliente item)
         {
             try
             {
-                service.Post<UserValidator>(item);
+                service.Post<ClienteValidator>(item);
 
                 return new ObjectResult(item.Id);
             }
-            catch(ArgumentNullException ex)
+            catch (ArgumentNullException ex)
             {
                 return NotFound(ex);
             }
@@ -39,15 +40,15 @@ namespace Modelo.Application.Controllers
             }
         }
         [HttpPut]
-        public IActionResult Put([FromBody] User item)
+        public IActionResult Put([FromBody] Cliente item)
         {
             try
             {
-                service.Put<UserValidator>(item);
+                service.Put<ClienteValidator>(item);
 
                 return new ObjectResult(item);
             }
-            catch(ArgumentNullException ex)
+            catch (ArgumentNullException ex)
             {
                 return NotFound(ex);
             }
@@ -65,7 +66,7 @@ namespace Modelo.Application.Controllers
 
                 return new NoContentResult();
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 return NotFound(ex);
             }
@@ -75,9 +76,9 @@ namespace Modelo.Application.Controllers
             }
         }
         /// <summary>
-        /// Busca todos os usuarios
+        /// Busca todos os Clientes
         /// </summary>
-        /// <returns>Objeto contendo Todos os usuario.</returns>
+        /// <returns>Objeto contendo Todos os Clientes.</returns>
         [HttpGet("BuscaTodos")]
         public IActionResult Get()
         {
@@ -92,10 +93,10 @@ namespace Modelo.Application.Controllers
         }
 
         /// <summary>
-        /// Recebe Identificador de usuario
+        /// Recebe Identificador de Cliente
         /// </summary>
         /// <param name="id">Identificador</param>
-        /// <returns>Objeto contendo dados do usuario.</returns>
+        /// <returns>Objeto contendo dados do Cliente.</returns>
         [HttpGet("ObtemUsuario/{id}")]
         public IActionResult Get(int id)
         {
@@ -103,7 +104,7 @@ namespace Modelo.Application.Controllers
             {
                 return new ObjectResult(service.Get(id));
             }
-            catch(ArgumentException ex)
+            catch (ArgumentException ex)
             {
                 return NotFound(ex);
             }

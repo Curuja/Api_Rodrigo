@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Modelo.Application</name>
+    </assembly>
+    <members>
+        <member name="M:Modelo.Application.Controllers.ClienteController.Post(Modelo.Domain.Entities.Cliente)">
+            <summary>
+            Recebe dados de usuario
+            </summary>
+            <param name="item">Dados do cliente</param>
+            <returns>Objeto contendo dados do usuario.</returns>
+        </member>
+        <member name="M:Modelo.Application.Controllers.ClienteController.Get">
+            <summary>
+            Busca todos os Clientes
+            </summary>
+            <returns>Objeto contendo Todos os Clientes.</returns>
+        </member>
+        <member name="M:Modelo.Application.Controllers.ClienteController.Get(System.Int32)">
+            <summary>
+            Recebe Identificador de Cliente
+            </summary>
+            <param name="id">Identificador</param>
+            <returns>Objeto contendo dados do Cliente.</returns>
+        </member>
+        <member name="M:Modelo.Application.Controllers.UserController.Post(Modelo.Domain.Entities.User)">
+            <summary>
+            Recebe dados de usuario
+            </summary>
+            <param name="item">Temperatura em Fahrenheit</param>
+            <returns>Objeto contendo dados do usuario.</returns>
+        </member>
+        <member name="M:Modelo.Application.Controllers.UserController.Get">
+            <summary>
+            Busca todos os usuarios
+            </summary>
+            <returns>Objeto contendo Todos os usuario.</returns>
+        </member>
+        <member name="M:Modelo.Application.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            Recebe Identificador de usuario
+            </summary>
+            <param name="id">Identificador</param>
+            <returns>Objeto contendo dados do usuario.</returns>
+        </member>
+    </members>
+</doc>

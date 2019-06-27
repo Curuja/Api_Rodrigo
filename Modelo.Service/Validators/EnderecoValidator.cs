@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Modelo.Service.Validators
 {
-    class EnderecoValidator : AbstractValidator<Endereco>
+   public class EnderecoValidator : AbstractValidator<Endereco>
     {
         public EnderecoValidator()
         {

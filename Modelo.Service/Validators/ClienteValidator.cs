@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Modelo.Service.Validators
 {
-    class ClienteValidator : AbstractValidator<Cliente>
+   public class ClienteValidator : AbstractValidator<Cliente>
     {
         public ClienteValidator()
         {
